@@ -1,0 +1,124 @@
+/* ==========================================================================
+   iO Property | Interior Mukomuko - Custom Stylesheet
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  --primary-gold: #c59b27;
+  --primary-gold-dark: #a27e1c;
+  --primary-gold-light: #f3e8cb;
+  --dark-charcoal: #121316;
+  --dark-surface: #1a1c23;
+  --soft-cream: #faf8f5;
+  --card-bg: #ffffff;
+  --border-subtle: #e5e7eb;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1, h2, h3, .font-serif-luxury {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-heading-accent {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Glassmorphism effects */
+.glass-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.glass-header-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(18, 19, 22, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Highlights */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #8a6508 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, #fdf6e2 0%, #faedd0 100%);
+  color: #8f6b10;
+  border: 1px solid rgba(197, 155, 39, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c59b27;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a27e1c;
+}
+
+/* Floating WhatsApp Animation */
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.6);
+  }
+}
+
+.wa-pulse {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+/* Image Card Hover Zoom */
+.portfolio-img-zoom {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.portfolio-card:hover .portfolio-img-zoom {
+  transform: scale(1.08);
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.modal-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal-hidden .modal-content {
+  transform: scale(0.95) translateY(10px);
+}
